@@ -2,7 +2,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://workflow-backend-2-1ki9.onrender.com/api',
   headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json'

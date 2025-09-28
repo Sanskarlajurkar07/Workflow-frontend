@@ -15,7 +15,7 @@ export const useGoogleOAuth = (nodeId: string, updateNodeData: Function): UseGoo
 
   const checkConnectionStatus = useCallback(async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/auth/verify', {
+      const response = await fetch('https://workflow-backend-2-1ki9.onrender.com/api/auth/verify', {
         credentials: 'include'
       });
       
@@ -53,7 +53,7 @@ export const useGoogleOAuth = (nodeId: string, updateNodeData: Function): UseGoo
     console.log('Current port:', currentPort);
     
   // Fix the redirect URI to match the backend routes
-  const redirectUri = `http://localhost:8000/api/auth/${service}/callback`;
+  const redirectUri = `https://workflow-backend-2-1ki9.onrender.com/api/auth/${service}/callback`;
   // Read client id from environment
   const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || '';
     
@@ -106,7 +106,7 @@ export const useGoogleOAuth = (nodeId: string, updateNodeData: Function): UseGoo
         if (accessToken) {
           // Verify session is established
           try {
-            const verifyResponse = await fetch('http://localhost:8000/api/auth/verify', {
+            const verifyResponse = await fetch('https://workflow-backend-2-1ki9.onrender.com/api/auth/verify', {
               credentials: 'include'
             });
             

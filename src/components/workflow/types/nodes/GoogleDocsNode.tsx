@@ -7,7 +7,7 @@ import { useGoogleOAuth } from '../../../../hooks/useGoogleOAuth';
 // Use environment variables instead of hard-coded secrets
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || '';
 const GOOGLE_CLIENT_SECRET = import.meta.env.VITE_GOOGLE_CLIENT_SECRET || '';
-const REDIRECT_URI = import.meta.env.VITE_GOOGLE_REDIRECT_URI || 'http://localhost:8000/api/auth/googledocs/callback';
+const REDIRECT_URI = import.meta.env.VITE_GOOGLE_REDIRECT_URI || 'https://workflow-backend-2-1ki9.onrender.com/api/auth/googledocs/callback';
 
 interface GoogleDocsNodeProps {
   id: string;
