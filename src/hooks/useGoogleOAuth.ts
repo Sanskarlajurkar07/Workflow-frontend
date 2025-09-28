@@ -52,9 +52,10 @@ export const useGoogleOAuth = (nodeId: string, updateNodeData: Function): UseGoo
     const currentPort = window.location.port || '5174'; // Default to 5174 if not available
     console.log('Current port:', currentPort);
     
-    // Fix the redirect URI to match the backend routes
-    const redirectUri = `http://localhost:8000/api/auth/${service}/callback`;
-    const clientId = '168656444308-5049dq3j9b326q5lrf7828eaolv703t9.apps.googleusercontent.com';
+  // Fix the redirect URI to match the backend routes
+  const redirectUri = `http://localhost:8000/api/auth/${service}/callback`;
+  // Read client id from environment
+  const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || '';
     
     const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
       `client_id=${clientId}&` +

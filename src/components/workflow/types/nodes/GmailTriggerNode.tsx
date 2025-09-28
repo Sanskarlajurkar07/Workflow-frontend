@@ -3,8 +3,8 @@ import { Handle, Position, NodeProps } from 'reactflow';
 import { Settings, Trash2, Mail, ChevronRight, RefreshCw, LogIn, AlertCircle } from 'lucide-react';
 import { useFlowStore } from '../../../../store/flowStore';
 
-const GOOGLE_CLIENT_ID = '168656444308-5049dq3j9b326q5lrf7828eaolv703t9.apps.googleusercontent.com';
-const GOOGLE_CLIENT_SECRET = 'REDACTED_GOOGLE_CLIENT_SECRET';
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || '';
+const GOOGLE_CLIENT_SECRET = import.meta.env.VITE_GOOGLE_CLIENT_SECRET || '';
 
 interface GmailTriggerNodeData {
   params?: {
