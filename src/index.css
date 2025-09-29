@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #FEFFFF;  /* Almost white canvas */
+  --bg-secondary: #DEF2F1; /* Very light teal */
+  --bg-accent: #3AAFA9;    /* Teal */
+  --text-primary: #17252A; /* Dark blue-green */
+  --text-secondary: #2B7A78; /* Medium teal */
+  --text-accent: #3AAFA9;    /* Teal */
+  --border-light: #DEF2F1;   /* Very light teal */
+  --border-medium: #3AAFA9;  /* Teal */
+  --border-accent: #2B7A78;  /* Medium dark teal */
+}
+
+.dark {
+  --bg-primary: #17252A;   /* Dark blue-green */
+  --bg-secondary: #2B7A78; /* Medium dark teal */
+  --bg-accent: #3AAFA9;    /* Teal */
+  --text-primary: #FEFFFF; /* Almost white */
+  --text-secondary: #DEF2F1; /* Very light teal */
+  --text-accent: #3AAFA9;    /* Teal */
+  --border-light: #2B7A78;   /* Medium dark teal */
+  --border-medium: #3AAFA9;  /* Teal */
+  --border-accent: #DEF2F1;  /* Very light teal */
+}
+
+html.light {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+html.dark {
+  background-color: #17252A; /* Dark blue-green */
+  color: #FEFFFF; /* Almost white */
+}
+
+/* Apply default font color to body */
+body {
+  color: var(--text-primary);
+}
+
+/* Input text colors - now black */
+input, textarea, select {
+  color: #000000 !important; /* Black text in all inputs */
+}
+
+/* Authentication screens inputs should have black text */
+.bg-gradient-to-br input,
+.bg-gradient-to-br textarea,
+.bg-gradient-to-br select {
+  color: #000000 !important; /* Force black text on gradient backgrounds */
+}
+
+/* Light background inputs should have dark text */
+.bg-white input, 
+.bg-white textarea, 
+.bg-white select,
+input.bg-white, 
+textarea.bg-white, 
+select.bg-white {
+  color: #000000 !important; /* Black text on white backgrounds */
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+/* Fix for inputs with themed backgrounds */
+[class*="bg-theme-"] input,
+[class*="bg-theme-"] textarea,
+[class*="bg-theme-"] select,
+input[class*="bg-theme-"],
+textarea[class*="bg-theme-"],
+select[class*="bg-theme-"] {
+  color: #000000 !important; /* Black text in themed backgrounds */
+}
+
+/* Add a global fix for any text in gradient backgrounds - excluding inputs */
+.bg-gradient-to-br,
+.from-\[\#17252A\] {
+  color: #FEFFFF;
+}
