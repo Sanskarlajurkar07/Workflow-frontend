@@ -68,7 +68,7 @@ api.interceptors.response.use(
           console.log('Attempting to refresh OAuth session...');
           try {
             // Try to refresh the session
-            const refreshResponse = await fetch('http://localhost:8000/api/auth/refresh', {
+            const refreshResponse = await fetch('https://workflow-backend-2-1ki9.onrender.com/api/auth/refresh', {
               method: 'POST',
               credentials: 'include',
               headers: {
@@ -96,8 +96,8 @@ api.interceptors.response.use(
         localStorage.removeItem('token');
         sessionStorage.removeItem('authToken');
         
-        // Clear session cookie manually as well
-        document.cookie = 'flowmind_session=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=localhost';
+  // Clear session cookie manually for the current host (don't hardcode domain)
+  document.cookie = 'flowmind_session=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
         
         // Store the current path for redirect after login
         localStorage.setItem('preLoginPath', window.location.pathname + window.location.search);
