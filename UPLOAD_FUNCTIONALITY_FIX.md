@@ -5,7 +5,7 @@
 The "404 errors" you're seeing are actually **401 Authentication errors**. The backend server is running correctly, but the frontend requests are missing authentication tokens.
 
 ### What's Happening:
-- Backend server: ✅ **Running successfully** on `http://127.0.0.1:8000`
+- Backend server: ✅ **Running successfully** on `https://workflow-backend-2-1ki9.onrender.com`
 - Knowledge base endpoints: ✅ **Working correctly**
 - Upload functionality: ✅ **Ready to use**
 - Issue: ❌ **Frontend authentication not being sent**
@@ -88,11 +88,11 @@ const apiClient = axios.create({
 - Check if `Authorization` header is present
 
 #### 3. **Verify Backend Connection**
-- Test: `http://127.0.0.1:8000/docs` should show API documentation
+- Test: `https://workflow-backend-2-1ki9.onrender.com/docs` should show API documentation
 - Status: Should see Swagger/FastAPI docs interface
 
 #### 4. **Check Frontend Environment**
-- Make sure frontend is connecting to `http://127.0.0.1:8000`
+- Make sure frontend is connecting to `https://workflow-backend-2-1ki9.onrender.com`
 - Check environment variables or config files
 
 ## 🌟 Upload Functionality Features

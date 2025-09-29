@@ -30,7 +30,7 @@ export const Signup = () => {
           {/* OAuth2 Buttons */}
           <div className="space-y-3 mb-6">
             <button
-              onClick={() => window.location.href = 'http://localhost:8000/api/auth/google/login'}
+              onClick={() => window.location.href = 'https://workflow-backend-2-1ki9.onrender.com/api/auth/google/login'}
               className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-white transition-colors"
             >
               <Chrome className="w-5 h-5" />
@@ -38,7 +38,7 @@ export const Signup = () => {
             </button>
 
             <button
-              onClick={() => window.location.href = 'http://localhost:8000/api/auth/github/login'}
+              onClick={() => window.location.href = 'https://workflow-backend-2-1ki9.onrender.com/api/auth/github/login'}
               className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-white transition-colors"
             >
               <Github className="w-5 h-5" />

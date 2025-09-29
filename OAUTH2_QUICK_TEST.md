@@ -31,7 +31,7 @@ const hasSession = document.cookie.includes('session');
 console.log('Has session cookie:', hasSession);
 
 // Test authentication immediately
-fetch('http://127.0.0.1:8000/api/auth/verify', {
+fetch('https://workflow-backend-2-1ki9.onrender.com/api/auth/verify', {
   credentials: 'include'
 })
 .then(response => {

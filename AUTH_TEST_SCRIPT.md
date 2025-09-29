@@ -21,7 +21,7 @@ if (authToken) {
 
 // Test 2: Test knowledge base API connection
 console.log('\n2️⃣ Testing knowledge base API...');
-fetch('http://127.0.0.1:8000/api/knowledge-base/', {
+fetch('https://workflow-backend-2-1ki9.onrender.com/api/knowledge-base/', {
   headers: authToken ? { 'Authorization': `Bearer ${authToken}` } : {},
   credentials: 'include'
 })
@@ -72,7 +72,7 @@ setTimeout(() => {
 // Test 4: Provide troubleshooting info
 console.log('\n4️⃣ Troubleshooting info:');
 console.log('Current URL:', window.location.href);
-console.log('Backend URL configured:', 'http://127.0.0.1:8000');
+console.log('Backend URL configured:', 'https://workflow-backend-2-1ki9.onrender.com');
 console.log('Local storage keys:', Object.keys(localStorage));
 console.log('Session storage keys:', Object.keys(sessionStorage));
 
@@ -121,8 +121,8 @@ console.log('📂 Folders - Organize your documents');
 3. **Check if you have the correct credentials**
 
 ### If Backend Connection Fails:
-1. **Make sure backend is running**: `uvicorn main:app --reload --host 127.0.0.1 --port 8000`
-2. **Test backend directly**: Open `http://127.0.0.1:8000/docs` in browser
+1. **Make sure backend is running**: Backend is deployed on Render
+2. **Test backend directly**: Open `https://workflow-backend-2-1ki9.onrender.com/docs` in browser
 3. **Check firewall/antivirus** isn't blocking the connection
 
 ### If UI Elements Missing:

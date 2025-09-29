@@ -19,7 +19,7 @@ export function useAuth(): AuthState {
       try {
         console.log("Checking auth status...");
         // Instead of checking localStorage, make a request to verify session
-        const response = await axios.get('http://localhost:8000/api/auth/verify', {
+        const response = await axios.get('https://workflow-backend-2-1ki9.onrender.com/api/auth/verify', {
           withCredentials: true  // Important: needed for cookies to be sent
         });
         
@@ -49,7 +49,7 @@ export function useAuth(): AuthState {
       
       // Exchange the temporary token for an HTTP-only cookie session
       const response = await axios.post(
-        'http://localhost:8000/api/auth/session', 
+        'https://workflow-backend-2-1ki9.onrender.com/api/auth/session', 
         { token: temporaryToken },
         { 
           withCredentials: true,
@@ -76,7 +76,7 @@ export function useAuth(): AuthState {
       setIsLoading(true);
       
       // Call logout endpoint to clear the HTTP-only cookie
-      await axios.post('http://localhost:8000/api/auth/logout', {}, { 
+      await axios.post('https://workflow-backend-2-1ki9.onrender.com/api/auth/logout', {}, { 
         withCredentials: true 
       });
       

@@ -181,7 +181,7 @@ export function useAuth(): AuthState {
         if (hasSession) {
           console.log("Session cookie detected - checking OAuth2 authentication");
           // For OAuth2 users, verify session with backend
-          const response = await axios.get('http://127.0.0.1:8000/api/auth/verify', {
+          const response = await axios.get('https://workflow-backend-2-1ki9.onrender.com/api/auth/verify', {
             withCredentials: true,
             timeout: 5000
           });
@@ -197,7 +197,7 @@ export function useAuth(): AuthState {
         const token = localStorage.getItem('authToken') || localStorage.getItem('token');
         if (token) {
           console.log("Token found - checking token authentication");
-          const response = await axios.get('http://127.0.0.1:8000/api/auth/verify', {
+          const response = await axios.get('https://workflow-backend-2-1ki9.onrender.com/api/auth/verify', {
             headers: { 'Authorization': `Bearer ${token}` },
             timeout: 5000
           });
@@ -230,7 +230,7 @@ export function useAuth(): AuthState {
       
       // Exchange the temporary token for an HTTP-only cookie session
       const response = await axios.post(
-        'http://127.0.0.1:8000/api/auth/session', 
+        'https://workflow-backend-2-1ki9.onrender.com/api/auth/session', 
         { token: temporaryToken },
         { 
           withCredentials: true,
@@ -260,7 +260,7 @@ export function useAuth(): AuthState {
       setIsLoading(true);
       
       // Call logout endpoint to clear the HTTP-only cookie
-      await axios.post('http://127.0.0.1:8000/api/auth/logout', {}, { 
+      await axios.post('https://workflow-backend-2-1ki9.onrender.com/api/auth/logout', {}, { 
         withCredentials: true 
       });
       
@@ -309,7 +309,7 @@ After applying the fixes, test in browser console:
 
 ```javascript
 // Test OAuth2 authentication
-fetch('http://127.0.0.1:8000/api/auth/verify', {
+fetch('https://workflow-backend-2-1ki9.onrender.com/api/auth/verify', {
   credentials: 'include'
 })
 .then(r => {

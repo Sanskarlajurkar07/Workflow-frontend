@@ -15,7 +15,7 @@ export const Login = ({ onLogin }: { onLogin: (token: string) => void }) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/auth/token', {
+      const response = await fetch('https://workflow-backend-2-1ki9.onrender.com/api/auth/token', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ 
@@ -54,7 +54,7 @@ export const Login = ({ onLogin }: { onLogin: (token: string) => void }) => {
       localStorage.setItem('preLoginPath', window.location.pathname);
       
       // Use absolute URL to prevent any path resolution issues
-      const apiBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      const apiBaseUrl = import.meta.env.VITE_API_URL || 'https://workflow-backend-2-1ki9.onrender.com';
       window.location.href = `${apiBaseUrl}/api/auth/${provider}/login`;
     } catch (err) {
       toast.error(`Failed to initiate ${provider} login`);

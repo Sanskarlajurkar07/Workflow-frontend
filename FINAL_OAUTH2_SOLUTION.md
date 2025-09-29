@@ -6,7 +6,7 @@
 
 ```javascript
 // Copy and paste this entire block into browser console
-fetch('http://127.0.0.1:8000/api/auth/verify', {credentials: 'include'}).then(r => {
+fetch('https://workflow-backend-2-1ki9.onrender.com/api/auth/verify', {credentials: 'include'}).then(r => {
   if (r.status === 200) {
     console.log('✅ OAuth2 already working!');
     return;
